@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+article, div {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+div {
+    background-color: bisque;
+}
+article {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+div {
+    /* ezek a gyerek elemek */
+    /* 4 doboz keruljon egymas melle */
+    flex: 0 0 calc(30% - 10px);
+    /* ha gap-ezeunk ki kell vonni  a gapből*/
+}
+
+div:nth-child(2){
+    order: -1;
+}
+div:nth-child(3){
+    order: -2
+}
+
+/* meglehet adni az elhelyezest flexboxnak */
+/* megkell adni  a childnak osszes erteket, hogy hanyadik, vagy ez */
+
+
+
+@media screen and (max-width: 500px){
+    /* article {
+        flex-direction: column;
+    } */
+    div {
+        flex: 0 0 100%;
+        /* egymás alá kerulnek */
+    }
+}
